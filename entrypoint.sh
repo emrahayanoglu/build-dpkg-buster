@@ -1,11 +1,11 @@
 #!/bin/sh
 set -e
 # Set the install command to be used by mk-build-deps (use --yes for non-interactive)
-install_tool="apt-get -o Debug::pkgProblemResolver=yes --no-install-recommends --yes  ${INPUT_architecture}"
+install_tool="apt-get -o Debug::pkgProblemResolver=yes --no-install-recommends --yes  ${INPUT_ARCHITECTURE}"
 # Install build dependencies automatically
 mk-build-deps --install --tool="${install_tool}" debian/control
 # Build the package
-dpkg-buildpackage $@ --host-arch ${INPUT_architecture}
+dpkg-buildpackage $@ --host-arch ${INPUT_ARCHITECTURE}
 # Output the filename
 cd ..
 filename=`ls *.deb | grep -v -- -dbgsym`
