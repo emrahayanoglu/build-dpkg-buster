@@ -7,7 +7,7 @@ apt-get install -y crossbuild-essential-$1
 
 apt-get -o Debug::pkgProblemResolver=yes -y --force-yes build-dep -a$1 .
 # Build the package
-debuild $@ -a$1
+dpkg-buildpackage $2 --host-arch $1
 # Output the filename
 cd ..
 filename=`ls *.deb | grep -v -- -dbgsym`
