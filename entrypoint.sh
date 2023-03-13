@@ -1,9 +1,9 @@
 #!/bin/sh
 set -e
 
-RUN dpkg --add-architecture $1
-RUN apt-get update
-RUN apt-get install -y crossbuild-essential-$1
+dpkg --add-architecture $1
+apt-get update
+apt-get install -y crossbuild-essential-$1
 
 # Set the install command to be used by mk-build-deps (use --yes for non-interactive)
 install_tool="apt-get -o Debug::pkgProblemResolver=yes --no-install-recommends --yes  $1"
