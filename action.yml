@@ -1,5 +1,10 @@
 name: 'Build Debian package: Buster'
 description: 'Build a Debian package, using the latest version of Debian Buster'
+inputs:
+  architecture:
+    description: 'Architecture of the Debian Package (Multi-Arch)'
+    required: false
+    default: 'amd64'
 outputs:
   filename:
     description: 'Name of the built `.deb` file'
