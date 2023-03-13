@@ -14,6 +14,8 @@ outputs:
 runs:
   using: docker
   image: Dockerfile
+  args:
+    - ${{ inputs.architecture }}
 
 branding:
   icon: package
