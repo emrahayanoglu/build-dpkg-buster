@@ -12,7 +12,7 @@ dpkg-buildpackage -b $2 --host-arch $1 || true
 echo "Package is built!"
 # Output the filename
 cd ..
-filename=`ls *.deb`
+filename=`ls *.deb | grep -v "dbgsym"`
 echo ::set-output name=filename::$filename
 # Move the built package into the Docker mounted workspace
 mv $filename workspace/
