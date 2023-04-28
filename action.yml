@@ -5,9 +5,6 @@ inputs:
     description: 'Architecture of the Debian Package (Multi-Arch)'
     required: false
     default: 'amd64'
-outputs:
-  path:
-    description: 'path of the output files'
 
 runs:
   using: docker

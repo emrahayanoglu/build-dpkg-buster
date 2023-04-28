@@ -14,4 +14,3 @@ echo "Package is built!"
 cd ..
 ls -l *.deb
 mv *.deb workspace/
-echo ::set-output name=path::workspace/
