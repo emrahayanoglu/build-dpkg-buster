@@ -4,6 +4,8 @@ set -e
 dpkg --add-architecture $1
 apt-get update
 apt-get install -y crossbuild-essential-$1
+apt-get install -y libc6:$1
+apt-get install -y libstdc++6:$1
 
 cd paho.mqtt.c
 apt-get -o Debug::pkgProblemResolver=yes -y --force-yes build-dep -a$1 .
