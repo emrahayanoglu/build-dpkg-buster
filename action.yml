@@ -6,10 +6,8 @@ inputs:
     required: false
     default: 'amd64'
 outputs:
-  filename-lib:
-    description: 'Name of the built `.deb` file'
-  filename-dev:
-    description: 'Name of the built `.deb` file for dev'
+  path:
+    description: 'path of the output files'
 
 runs:
   using: docker

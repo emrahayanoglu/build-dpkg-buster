@@ -12,10 +12,6 @@ dpkg-buildpackage -b $2 --host-arch $1 || true
 echo "Package is built!"
 # Output the filename
 cd ..
-filename_lib=`ls *.deb | grep -v "dev"`
-filename_dev=`ls *.deb | grep "dev"`
-echo ::set-output name=filename-lib::$filename_lib
-echo ::set-output name=filename-dev::$filename_dev
-# Move the built package into the Docker mounted workspace
-mv $filename_lib workspace/
-mv $filename_dev workspace/
+ls -l *.deb
+mv *.deb workspace/
+echo ::set-output name=path::workspace/
