@@ -6,10 +6,10 @@ inputs:
     required: false
     default: 'amd64'
 outputs:
-  filename:
+  filename-lib:
     description: 'Name of the built `.deb` file'
-  filename-dbgsym:
-    description: 'Name of the built `.deb` file for debug symbols'
+  filename-dev:
+    description: 'Name of the built `.deb` file for dev'
 
 runs:
   using: docker
