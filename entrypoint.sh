@@ -27,4 +27,3 @@ echo "Package is built!"
 # Output the filename
 cd ..
 ls -l *.deb
-mv *.deb workspace/
