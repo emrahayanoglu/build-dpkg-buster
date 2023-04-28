@@ -13,7 +13,7 @@ dpkg-buildpackage -b $2 --host-arch $1 || true
 echo "Package is built!"
 
 cd ..
-dpkg -i libpaho*dev*.deb
+dpkg -i *.deb
 
 cd main
 apt-get -o Debug::pkgProblemResolver=yes -y --force-yes build-dep -a$1 .
